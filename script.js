@@ -109,7 +109,9 @@ class App {
 
     const coords = [latitude, longitude];
 
-    this.#map = L.map('map').setView(coords, this.#mapZoomLevel);
+    setTimeout(() => {
+      this.#map = L.map('map').setView(coords, this.#mapZoomLevel);
+    }, 100);
 
     L.tileLayer('https://tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
       attribution:
