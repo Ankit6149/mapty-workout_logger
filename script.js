@@ -113,10 +113,9 @@ class App {
       this.#map = L.map('map').setView(coords, this.#mapZoomLevel);
     }, 100);
 
-    L.tileLayer('https://tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this.#map);
+     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+       attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(this.#map);
 
     this.#map.on('click', this._showForm.bind(this));
 
